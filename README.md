@@ -17,3 +17,80 @@ On the other hand, the binary data format fits the MessagePack format perfectly,
 What about arrays and key-value pairs (maps)? Think about the extra characters required with JSON. A comma must separate all elements, and a colon separates a map key from its value. And a pair of square brackets or curly braces ([] or {}) are needed to enclose the array or map. Again, this means extra storage space requirements and more data to transfer. With MessagePack, you only specify the data type (array/map) along with the number of elements present. This can be *just one* extra byte in all for a small arrays and maps.
 
 There’s more to say on this topic. I suggest you try using MessagePack. There are great libraries in different programming languages that encode and decode data. If you’ll allow me to plug mine, check out: [github.com/dchenk/msgp](https://github.com/dchenk/msgp)
+
+## Size of Encoded Messages
+
+Let's consider the size of encoded messages in each of the two formats. We want to compare small, medium, and large messages to see which format is best for which kinds of messages. (The messages for the JSON size calculation are minified.)
+
+### Small Messages
+
+Data:
+```
+{
+	"hello": "world",
+	"name": "The Boss",
+	"age": 29,
+	"weight": 186.47
+}
+```
+JSON: 60 bytes  
+MessagePack: 48 bytes (22.2% smaller)
+
+### Medium Messages
+
+Data:
+```
+[
+	{
+		"hello": "world",
+		"name": "The Boss",
+		"age": 29,
+		"weight": 186.47,
+		"height": 72.3,
+		"hobbies": ["hiking", "swimming", "reading"],
+		"extra": {
+			"location": "USA",
+			"bio": "This \"string\" has \t characters \n that \" should \t be \\escaped."
+		}
+	},
+	...repeat that X10
+]
+```
+JSON: 2211 bytes  
+MessagePack: 1841 bytes (18.3% smaller)
+
+### Large messages
+
+Data:
+```
+[
+	{
+		"hello": "world",
+		"name": "The Boss",
+		"age": 29,
+		"weight": 186.47,
+		"height": 72.3,
+		"hobbies": ["hiking", "swimming", "reading", "soccer"],
+		"extra": {
+			"location": "USA",
+			"bio": "This \n\t \"string\" has \n\tmore \t \"characters \n \" to \t \\escape.",
+			"number": 105,
+			"negative_num": -70
+		}
+	},
+	...repeat that X30
+]
+```
+JSON: 7951 bytes  
+MessagePack: 6363 bytes (22.2% smaller)
+
+#### Running the test
+
+First, make sure you have Go installed. Then, after cloning the repo, from within the directory re-generate files for msgp in case the code generator has been updated:
+```
+go generate
+```
+Run the test:
+```
+go run *.go
+```

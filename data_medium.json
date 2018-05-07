@@ -1,0 +1,122 @@
+[
+	{
+		"hello": "world",
+		"name": "The Boss",
+		"age": 29,
+		"weight": 186.47,
+		"height": 72.3,
+		"hobbies": ["hiking", "swimming", "reading"],
+		"extra": {
+			"location": "USA",
+			"bio": "This \"string\" has \t characters \n that \" should \t be \\escaped."
+		}
+	},
+	{
+		"hello": "world",
+		"name": "The Boss",
+		"age": 29,
+		"weight": 186.47,
+		"height": 72.3,
+		"hobbies": ["hiking", "swimming", "reading"],
+		"extra": {
+			"location": "USA",
+			"bio": "This \"string\" has \t characters \n that \" should \t be \\escaped."
+		}
+	},
+	{
+		"hello": "world",
+		"name": "The Boss",
+		"age": 29,
+		"weight": 186.47,
+		"height": 72.3,
+		"hobbies": ["hiking", "swimming", "reading"],
+		"extra": {
+			"location": "USA",
+			"bio": "This \"string\" has \t characters \n that \" should \t be \\escaped."
+		}
+	},
+	{
+		"hello": "world",
+		"name": "The Boss",
+		"age": 29,
+		"weight": 186.47,
+		"height": 72.3,
+		"hobbies": ["hiking", "swimming", "reading"],
+		"extra": {
+			"location": "USA",
+			"bio": "This \"string\" has \t characters \n that \" should \t be \\escaped."
+		}
+	},
+	{
+		"hello": "world",
+		"name": "The Boss",
+		"age": 29,
+		"weight": 186.47,
+		"height": 72.3,
+		"hobbies": ["hiking", "swimming", "reading"],
+		"extra": {
+			"location": "USA",
+			"bio": "This \"string\" has \t characters \n that \" should \t be \\escaped."
+		}
+	},
+	{
+		"hello": "world",
+		"name": "The Boss",
+		"age": 29,
+		"weight": 186.47,
+		"height": 72.3,
+		"hobbies": ["hiking", "swimming", "reading"],
+		"extra": {
+			"location": "USA",
+			"bio": "This \"string\" has \t characters \n that \" should \t be \\escaped."
+		}
+	},
+	{
+		"hello": "world",
+		"name": "The Boss",
+		"age": 29,
+		"weight": 186.47,
+		"height": 72.3,
+		"hobbies": ["hiking", "swimming", "reading"],
+		"extra": {
+			"location": "USA",
+			"bio": "This \"string\" has \t characters \n that \" should \t be \\escaped."
+		}
+	},
+	{
+		"hello": "world",
+		"name": "The Boss",
+		"age": 29,
+		"weight": 186.47,
+		"height": 72.3,
+		"hobbies": ["hiking", "swimming", "reading"],
+		"extra": {
+			"location": "USA",
+			"bio": "This \"string\" has \t characters \n that \" should \t be \\escaped."
+		}
+	},
+	{
+		"hello": "world",
+		"name": "The Boss",
+		"age": 29,
+		"weight": 186.47,
+		"height": 72.3,
+		"hobbies": ["hiking", "swimming", "reading"],
+		"extra": {
+			"location": "USA",
+			"bio": "This \"string\" has \t characters \n that \" should \t be \\escaped."
+		}
+	},
+	{
+		"hello": "world",
+		"name": "The Boss",
+		"age": 29,
+		"weight": 186.47,
+		"height": 72.3,
+		"hobbies": ["hiking", "swimming", "reading"],
+		"extra": {
+			"location": "USA",
+			"bio": "This \"string\" has \t characters \n that \" should \t be \\escaped."
+		}
+	}
+]
