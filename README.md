@@ -89,10 +89,16 @@ MessagePack: 6363 bytes (22.2% smaller)
 
 #### Running the test
 
-First, make sure you have Go installed. Then, after cloning the repo, from within the directory re-generate files for msgp in case the code generator has been updated:
+First, make sure you have Go installed. Then, after cloning the repo, download the latest version of msgp:
+```
+go get -u github.com/dchenk/msgp
+```
+
+From within the repo directory, re-generate files for msgp in case the code generator has been updated:
 ```
 go generate
 ```
+
 Run the test:
 ```
 go run *.go
