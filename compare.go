@@ -86,10 +86,11 @@ func main() {
 
 // Small message schema
 type Small struct {
-	Hello  string  `json:"hello" msgp:"hello"`
-	Name   string  `json:"name" msgp:"name"`
-	Age    int     `json:"age" msgp:"age"`
-	Weight float64 `json:"weight" msgp:"weight"`
+	Name    string   `json:"name" msgp:"name"`
+	Age     int      `json:"age" msgp:"age"`
+	Weight  float64  `json:"weight" msgp:"weight"`
+	Boring  bool     `json:"boring" msgp:"boring"`
+	Hobbies []string `json:"hobbies" msgp:"hobbies"`
 }
 
 // Medium message schema
@@ -100,6 +101,7 @@ type Medium []struct {
 	Weight  float64  `json:"weight" msgp:"weight"`
 	Height  float64  `json:"height" msgp:"height"`
 	Hobbies []string `json:"hobbies" msgp:"hobbies"`
+	Cool    bool     `json:"cool" msgp:"cool"`
 	Extra   struct {
 		Location string `json:"location" msgp:"location"`
 		Bio      string `json:"bio" msgp:"bio"`

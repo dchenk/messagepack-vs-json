@@ -1,6 +1,7 @@
 {
-	"hello": "world",
 	"name": "The Boss",
 	"age": 29,
-	"weight": 186.47
+	"weight": 186.47,
+	"boring": false,
+	"hobbies": ["hiking", "swimming"]
 }

@@ -16,6 +16,8 @@ On the other hand, the binary data format fits the MessagePack format perfectly,
 
 What about arrays and key-value pairs (maps)? Think about the extra characters required with JSON. A comma must separate all elements, and a colon separates a map key from its value. And a pair of square brackets or curly braces ([] or {}) are needed to enclose the array or map. Again, this means extra storage space requirements and more data to transfer. With MessagePack, you only specify the data type (array/map) along with the number of elements present. This can be *just one* extra byte in all for a small arrays and maps.
 
+What about boolean values? JSON encodes booleans as unquoted strings. So 'true' takes four bytes, and 'false' takes five bytes. Either boolean value takes just one byte with MessagePack.
+
 There’s more to say on this topic. I suggest you try using MessagePack. There are great libraries in different programming languages that encode and decode data. If you’ll allow me to plug mine, check out: [github.com/dchenk/msgp](https://github.com/dchenk/msgp)
 
 ## Size of Encoded Messages
@@ -27,14 +29,15 @@ Let's consider the size of encoded messages in each of the two formats. We want 
 Data:
 ```
 {
-	"hello": "world",
 	"name": "The Boss",
 	"age": 29,
-	"weight": 186.47
+	"weight": 186.47,
+	"boring": false,
+	"hobbies": ["hiking", "swimming"]
 }
 ```
-JSON: 60 bytes  
-MessagePack: 48 bytes (22.2% smaller)
+JSON: 91 bytes  
+MessagePack: 69 bytes (27.5% smaller)
 
 ### Medium Messages
 
@@ -46,7 +49,7 @@ Data:
 		"name": "The Boss",
 		"age": 29,
 		"weight": 186.47,
-		"height": 72.3,
+		"height": 72.36,
 		"hobbies": ["hiking", "swimming", "reading"],
 		"extra": {
 			"location": "USA",
@@ -56,10 +59,10 @@ Data:
 	...repeat that X10
 ]
 ```
-JSON: 2211 bytes  
-MessagePack: 1841 bytes (18.3% smaller)
+JSON: 2341 bytes  
+MessagePack: 1901 bytes (20.7% smaller)
 
-### Large messages
+### Large Messages
 
 Data:
 ```
